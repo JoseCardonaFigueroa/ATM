@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container">
-	<form action="{% url 'login' %}" data-ajax="false" method="POST">
+	<form  data-ajax="false" method="POST">
     {% include "accounts/formfields.html" %}
     <input type="submit" value="{% trans 'Log In' %}" />
     <input type="hidden" name="next" value="{{ next }}" />
