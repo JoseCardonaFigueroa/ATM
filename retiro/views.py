@@ -12,4 +12,4 @@ def hola(request):
 @login_required
 def retiro(request):
     return render_to_response('retiro/retiro.html',
-                                context_instance=RequestCOntext(request, {}))
+                                context_instance=RequestContext(request, {}))

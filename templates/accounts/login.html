@@ -3,11 +3,11 @@
 {% block title %}{% trans 'Log In' %}{% endblock %}
 {% block content %}
 
-<div class="container">
-	<form  data-ajax="false" method="POST">
-    {% include "accounts/formfields.html" %}
-    <input type="submit" value="{% trans 'Log In' %}" />
-    <input type="hidden" name="next" value="{{ next }}" />
+<div class="container" align="center">
+<form  data-ajax="false" method="POST">
+  {% include "accounts/formfields.html" %}
+  <input type="submit" value="{% trans 'Log In' %}" />
+  <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
 </div>

@@ -1,46 +1,42 @@
-<div class="container" style="position:absolute; top:130px; left:620px; color:#CCCCCC;">
-<h5 class="form-signin-heading" align ="center" >Usuario: "Nombre_Usuario"</h5>
-</div>
+{% extends 'base.html'%}
+{%block title%} Retiros{%endblock%}
+{% block content%}
+<h3>Cuenta de: {{request.user.first_name}}  {{request.user.last_name}}</h3>
 
-<div class="container" style="position:absolute; top:190px; left:130px; color:#CCCCCC;">
-<h5 class="form-signin-heading" align ="center" >Maximo retiro en el dia: $ 7,000 pesos</h5>
-</div>
-<center>
-</center>
-
-  <div class="container">
-    <form name="form1" method="post" action="" class="form-signin" style="position:absolute; top:240px; left:350px; width:500px; height:290px; background: url('img/metal.jpg') top left no-repeat;">
-      <h2 class="form-signin-heading" align ="center">Cantidad a Retirar</h2>
-      <div class="checkbox">
-      <label style="position:absolute; top:80px; left:60px;">
-        <input type="checkbox"> $ 100.00
-      </label>
-      <label style="position:absolute; top:80px; left:260px;">
-        <input type="checkbox"> $ 200.00
-      </label>
-      <label style="position:absolute; top:110px; left:60px;">
-        <input type="checkbox"> $ 5000.00
-      </label>
-      <label style="position:absolute; top:110px; left:260px;">
-        <input type="checkbox"> $ 1,000.00
-      </label>
-      <label style="position:absolute; top:140px; left:60px;">
-        <input type="checkbox"> $ 2,000.00
-      </label>
-      <label style="position:absolute; top:140px; left:260px;">
-        <input type="checkbox"> $ 3,000.00
-      </label>
-    </div>
-      <label style="position:absolute; top:170px; left:40px;">
-        <input type="checkbox">  Otra Cantidad:
-      </label>
-      <input type="text" name="usuario" class="input-block-level" placeholder="00000.0000" autocomplete="off" style="position:absolute; top:165px; left:200px; width:250px; height:30px;">
-
-          <div class="container" style="position:absolute; top:200px; left:0px; width:500px; height:30px;">
-            <h6 class="form-signin-heading" align ="center" >Saldo al efectuar el retiro: $ 0000.00 pesos</h6>
-          </div>
-
-      <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:250px; left:30px; width:200px; height:30px;">Confirmar</button>
-      <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:245px; left:270px; width:200px; height:30px;">Cancelar</button>
-     </form>
+<div class="container" align="center">
+  <form name="form1" method="post" action="" class="form-signin" style="position:absolute; top:240px; left:350px; width:500px; height:290px; background: url('img/metal.jpg') top left no-repeat;">
+    <h2 class="form-signin-heading" align ="center">Cantidad a Retirar</h2>
+    <div class="checkbox">
+    <label style="position:absolute; top:80px; left:60px;">
+      <input type="checkbox"> $ 100.00
+    </label>
+    <label style="position:absolute; top:80px; left:260px;">
+      <input type="checkbox"> $ 200.00
+    </label>
+    <label style="position:absolute; top:110px; left:60px;">
+      <input type="checkbox"> $ 5000.00
+    </label>
+    <label style="position:absolute; top:110px; left:260px;">
+      <input type="checkbox"> $ 1,000.00
+    </label>
+    <label style="position:absolute; top:140px; left:60px;">
+      <input type="checkbox"> $ 2,000.00
+    </label>
+    <label style="position:absolute; top:140px; left:260px;">
+      <input type="checkbox"> $ 3,000.00
+    </label>
   </div>
+    <label style="position:absolute; top:170px; left:40px;">
+      <input type="checkbox">  Otra Cantidad:
+    </label>
+    <input type="text" name="usuario" class="input-block-level" placeholder="00000.0000" autocomplete="off" style="position:absolute; top:165px; left:200px; width:250px; height:30px;">
+
+        <div class="container" style="position:absolute; top:200px; left:0px; width:500px; height:30px;">
+          <h6 class="form-signin-heading" align ="center" >Saldo al efectuar el retiro: $ 0000.00 pesos</h6>
+        </div>
+
+    <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:250px; left:30px; width:200px; height:30px;">Confirmar</button>
+    <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:245px; left:270px; width:200px; height:30px;">Cancelar</button>
+   </form>
+</div>
+{% endblock %}
