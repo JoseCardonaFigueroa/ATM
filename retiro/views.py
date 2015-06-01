@@ -7,6 +7,9 @@ from django.template import RequestContext
 
 @login_required
 def hola(request):
-    
     return render_to_response('retiro/index.html',
                                 context_instance=RequestContext(request, {}))
+@login_required
+def retiro(request):
+    return render_to_response('retiro/retiro.html',
+                                context_instance=RequestCOntext(request, {}))

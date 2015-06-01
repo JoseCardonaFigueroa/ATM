@@ -1,16 +1,14 @@
 {% extends 'base.html'%}
 {%block title%} Retiros{%endblock%}
 {% block content%}
-<div class="container" style="position:absolute; top:200px; left:120px; color:#CCCCCC;">
- <h3>Bienvenido {{request.user.first_name}}  {{request.user.last_name}}</h3>
-</div>
+<h3>Bienvenido {{request.user.first_name}}  {{request.user.last_name}}</h3>
 
-  <div class="container">
-    <form name="form1" method="post" action="" class="form-signin" style="position:absolute; top:250px; left:400px; width:400px; height:200px; background: url('img/metal.jpg') top left no-repeat;">
-      <h2 class="form-signin-heading" align ="center">Saldo Actual</h2>
-      <input type="text" name="usuario" class="input-block-level" placeholder="$ 000.00" autocomplete="off" style="position:absolute; top:60px; left:40px; width:320px;">
-      <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:115px; left:70px; width:250px; height:30px;">Retirar</button>
-      <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:150px; left:70px; width:250px; height:30px;">Salir</button>
-     </form>
-  </div>
+<div class="container" align="center">
+  <h2 align ="center">Saldo Actual</h2>
+  <h4 align ="center">$$$$$$$$$$$$</h4>
+  <div class="container" align="center">
+  <a class="btn btn-primary" href="/retiro/">Retirar</a>
+  <a class="btn btn-danger">Salir</a>
+</div>
+</div>
 {% endblock %}
