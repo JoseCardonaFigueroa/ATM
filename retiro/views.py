@@ -2,6 +2,7 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
+from django.contrib import auth
 
 # Create your views here.
 
@@ -13,3 +14,7 @@ def hola(request):
 def retiro(request):
     return render_to_response('retiro/retiro.html',
                                 context_instance=RequestCOntext(request, {}))
+
+def logout(request):
+    auth.logout(request)
+    return render(request, 'accounts/logout.html')
