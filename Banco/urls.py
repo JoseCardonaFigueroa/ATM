@@ -23,6 +23,7 @@ urlpatterns = [
     #url('^', include('django.contrib.auth.urls')),
     url(r'^$','retiro.views.hola'),
     url(r'^retiro/$','retiro.views.retiro'),
+    url(r'^confirmar/$','retiro.views.confirmar'),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'accounts/login.html'}),
     url(r'^logout/$','retiro.views.logout'),
 ]

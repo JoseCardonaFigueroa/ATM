@@ -14,6 +14,10 @@ def hola(request):
 def retiro(request):
     return render_to_response('retiro/retiro.html',
                                 context_instance=RequestContext(request, {}))
+@login_required
+def confirmar(request):
+    return render_to_response('retiro/confirmar.html',
+                                context_instance=RequestContext(request, {}))
 
 def logout(request):
     auth.logout(request)

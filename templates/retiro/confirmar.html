@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{%block title%} Retiros{%endblock%}
+{% block content%}
+<h3>Cuenta de: {{request.user.first_name}}  {{request.user.last_name}}</h3>
+
+<div class="container" style="position:absolute; top:130px; left:620px; color:#CCCCCC;">
+<h5 class="form-signin-heading" align ="center" >Usuario: "Nombre_Usuario"</h5>
+</div>
+
+
+<div class="container" style="position:absolute; top:200px; left:120px; color:#CCCCCC;">
+<h5 class="form-signin-heading" align ="center" >Se han retirado: $ 000.00 pesos de la cuenta"</h5>
+</div>
+
+  <div class="container">
+    <form name="form1" method="post" action="" class="form-signin" style="position:absolute; top:250px; left:400px; width:400px; height:200px; background: url('img/metal.jpg') top left no-repeat;">
+      <h2 class="form-signin-heading" align ="center">Saldo Actual</h2>
+      <input type="text" name="usuario" class="input-block-level" placeholder="Numero de Cuenta" autocomplete="off" style="position:absolute; top:60px; left:40px; width:320px;">
+      <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:115px; left:70px; width:250px; height:30px;">Retirar</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit" style="position:absolute; top:150px; left:70px; width:250px; height:30px;">Salir</button>
+     </form>
+  </div>
+{% endblock %}
