@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
@@ -21,4 +21,4 @@ def confirmar(request):
 
 def logout(request):
     auth.logout(request)
-    return render(request, 'accounts/logout.html')
+    return redirect('/')
