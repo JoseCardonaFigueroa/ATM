@@ -3,8 +3,8 @@
 {% block content%}
 <h3>Cuenta de: {{request.user.first_name}}  {{request.user.last_name}}</h3>
 <div class="container" align="center">
-<h4 align ="center" >Se han retirado: $ 000.00 pesos de la cuenta"</h4>
-<h4 align ="center" >Quedan: $ 000.00 pesos en la cuenta"</h4>
+<h4 align ="center" >Se han retirado: $ {{monto}} pesos de la cuenta"</h4>
+<h4 align ="center" >Quedan: $ {{cantidad_total}} pesos en la cuenta"</h4>
 <a class="btn btn-primary" method="post" href="/retiro/">Nuevo Retiro</a>
 <a class="btn btn-danger" href="/logout/">Salir</a>
 </div>

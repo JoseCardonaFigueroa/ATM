@@ -5,14 +5,16 @@
 
 <div class="container" align="center">
 <h2 class="form-signin-heading" align ="center">Cantidad a Retirar</h2>
-
-Ingrese cantidad:
-</label>
-<input type="number" name="cantidad" class="input-block-level">
+<form action="/confirmar/" method="get">
+<div ng-app="">
+  <p>Ingrese cantidad :
+  <input id="monto" name="monto" type="number" ng-model="monto" required min="50" max="{{cantidad_total}}"></p>
 </br>
-Cantidad Restante: angular
+Cantidad Restante: &lbrace;&lbrace;{{cantidad_total}}-monto&rbrace;&rbrace;
 </br>
-<a class="btn btn-success" href="/confirmar/">Retirar</a>
+</div>
+<button type="submit" class="btn btn-success" >Retirar</button>
+</form>
 <a class="btn btn-danger" href="/logout/">Salir</a>
 <div>
 </div>

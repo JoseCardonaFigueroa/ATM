@@ -17,12 +17,26 @@ def hola(request):
                             )
 @login_required
 def retiro(request):
+    cuenta = Cuenta.objects.get(user=request.user)
     return render_to_response('retiro/retiro.html',
-                                context_instance=RequestContext(request, {}))
+                                context_instance=RequestContext(request,
+                                {'cantidad_total': cuenta.cantidad_total}))
 @login_required
 def confirmar(request):
-    return render_to_response('retiro/confirmar.html',
-                                context_instance=RequestContext(request, {}))
+    if request.method == 'GET':
+        cuenta = Cuenta.objects.get(user=request.user)
+        monto = float(request.GET.get('monto', ''))
+        print monto
+        cuenta.cantidad_total = cuenta.cantidad_total - monto
+        cuenta.save()
+        print cuenta.cantidad_total
+        return render_to_response('retiro/confirmar.html',
+                                    context_instance=RequestContext(request,
+                                    {'cantidad_total': cuenta.cantidad_total,
+                                    'monto': monto
+                                    }))
+    else:
+        return redirect('/retiro/')
 
 def logout(request):
     auth.logout(request)
