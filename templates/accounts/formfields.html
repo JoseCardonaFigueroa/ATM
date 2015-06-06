@@ -2,7 +2,8 @@
 {# generic form-field display template fragment #}
 {% csrf_token %}
 {{ form.non_field_errors }}
-
+{% include 'headers.html'%}
+<br>
 {% for field in form.visible_fields %}
     <div class="{% if field.field.required %}required{% endif %}">
         {# Include the hidden fields in the form #}

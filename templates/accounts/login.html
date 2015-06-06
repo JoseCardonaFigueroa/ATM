@@ -3,10 +3,14 @@
 {% block title %}{% trans 'Log In' %}{% endblock %}
 {% block content %}
 <div class="container" align="center">
-<form data-ajax="false" method="POST">
+<form  class="form-inline" data-ajax="false" method="POST">
 <div class="form-group">
+  <br>
+  <br>
+  <br>
   {% include "accounts/formfields.html" %}
-  <input type="submit" class="form-control" value="{% trans 'Log In' %}"/>
+  <br>
+  <input type="submit" class="form-control btn btn-success" value="{% trans 'Log In' %}"/>
 </div>
 <div class="form-group">
   <input type="hidden" class="form-control" name="next" value="{{ next }}" />

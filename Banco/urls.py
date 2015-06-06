@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from retiro import urls as retiro_urls
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [

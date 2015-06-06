@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'banco',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'LeeesdhdA',
     }
 }
 
@@ -91,7 +91,7 @@ STATICFILES_DIRS = (
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 

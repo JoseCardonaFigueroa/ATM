@@ -1,0 +1,11 @@
+<div class="page-header">
+  <br>
+  {%if user.is_authenticated %}
+    <h4>Bienvenido {{request.user.first_name}}  {{request.user.last_name}}</h4>
+    <h5>Tu último acceso fue el {{request.user.last_login|date:"D d"}} de
+    {{request.user.last_login|date:"N"}} del {{request.user.last_login|date:"Y"}}</h5>
+  {% else %}
+    <h2>Accede a tu cuenta</h2>
+  {% endif%}
+
+</div>

@@ -1,16 +1,46 @@
 {% extends 'base.html'%}
 {%block title%} Retiros{%endblock%}
 {% block content%}
-<h3>Bienvenido {{request.user.first_name}}  {{request.user.last_name}}</h3>
 
-<div class="container" align="center">
-  {%if cantidad_total%}
-    <h2 align ="center">Saldo Actual</h2>
-    <h4 align ="center">{{cantidad_total}}</h4>
-  {%else%}
-    <h2 align ="center">No hay dinero disponible</h2>
-  {%endif%}
-  <a class="btn btn-primary" href="/retiro/">Hacer Retiro</a>
-  <a class="btn btn-danger" href="/logout/">Salir</a>
-</div>
+{% include 'headers.html'%}
+  <br>
+  <p class="text-center">
+
+    {%if cantidad_total%}
+      <h4 align ="center">Saldo Actual:</h4>
+      <h1 align ="center">${{cantidad_total}}</h1>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <div class="row">
+        <div class="col-md-6  center-block">
+          <div class="col-md-4"></div>
+          <a class="btn btn-primary btn-lg col-md-4"  href="/retiro/">Hacer retiro</a>
+          <div class="col-md-4"></div>
+
+        </div>
+
+        <div class="col-md-6  center-block">
+          <div class="col-md-4"></div>
+          <a class="btn btn-danger btn-lg col-md-4" align ="center" href="/logout/">Salir</a>
+          <div class="col-md-4"></div>
+
+        </div>
+      </div>
+
+    {%else%}
+      <h2 align ="center">No hay dinero disponible</h2>
+    {%endif%}
+
+
+  </p>
+
 {% endblock %}
