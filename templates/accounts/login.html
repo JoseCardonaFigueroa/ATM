@@ -2,6 +2,12 @@
 {% load i18n %}
 {% block title %}{% trans 'Log In' %}{% endblock %}
 {% block content %}
+{% if request.user.is_authenticated %}
+  <br>
+  <br>
+  <br>
+  <p>Ya se ha iniciado sesión</p>
+{%else%}
 <div class="container" align="center">
 <form  class="form-inline" data-ajax="false" method="POST">
 <div class="form-group">
@@ -16,4 +22,5 @@
   <input type="hidden" class="form-control" name="next" value="{{ next }}" />
 </div>
 </form>
+{%endif%}
 {% endblock %}

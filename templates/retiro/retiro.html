@@ -11,16 +11,19 @@
   <br>
 <div  ng-app="">
   <div class="form-group">
-    <label for="monto"><h3>Ingrese cantidad:</h3> </label>
+    <label for="monto"><h3>Ingrese cantidad:</h3></label>
     <input id="monto" name="monto" type="number" ng-model="monto" required min="50" max="{{cantidad_total}}">
+    <p>Solo se puede retirar multiplos de <b>50</b></p>
   </div>
 
-</br>
-Cantidad Restante: &lbrace;&lbrace;{{cantidad_total}}-monto&rbrace;&rbrace;
-</br>
+<br>
+<br>
+<br>
+<h3>
+Cantidad restante después del retiro: <b>&lbrace;&lbrace;{{cantidad_total}}-monto&rbrace;&rbrace;</b>
+</h3>
+<br>
 </div>
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -38,8 +41,15 @@ Cantidad Restante: &lbrace;&lbrace;{{cantidad_total}}-monto&rbrace;&rbrace;
 <script>
 function asegurar ()
   {
-      rc = confirm("¿Seguro que desea retirar el monto de su cuenta?");
-      return rc;
+    monto = document.getElementById('monto').value;
+    if ((monto%50)==0){
+      rc = confirm("¿Seguro que desea retirar "+ monto +" pesos de su cuenta?");
+    } else {
+      alert("Solo se pueden retirar multiplos de cincuenta");
+      rc = false;
+    }
+
+    return rc;
   }
 </script>
 {% endblock %}
