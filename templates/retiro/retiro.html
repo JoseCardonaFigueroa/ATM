@@ -5,7 +5,8 @@
 <h3>Cuenta de {{request.user.first_name}}  {{request.user.last_name}}</h3>
 
 <div class="container" align="center">
-<form class="form-inline" action="/confirmar/" method="get" onsubmit="return asegurar()">
+<form class="form-inline" action="/confirmar/" method="post" onsubmit="return asegurar()">
+  {% csrf_token %}
   <br>
   <br>
 <div  ng-app="">

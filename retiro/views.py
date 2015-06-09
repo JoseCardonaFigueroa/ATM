@@ -23,10 +23,10 @@ def retiro(request):
                                 {'cantidad_total': cuenta.cantidad_total}))
 @login_required
 def confirmar(request):
-    if request.method == 'GET':
+
+    if request.POST.get ('monto', ''):
         cuenta = Cuenta.objects.get(user=request.user)
-        monto = float(request.GET.get('monto', ''))
-        print monto
+        monto = float(request.POST.get('monto', ''))
         if cuenta.cantidad_total > monto:
             cuenta.cantidad_total = cuenta.cantidad_total - monto
             cuenta.save()
