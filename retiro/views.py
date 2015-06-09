@@ -27,7 +27,7 @@ def confirmar(request):
     if request.POST.get ('monto', ''):
         cuenta = Cuenta.objects.get(user=request.user)
         monto = float(request.POST.get('monto', ''))
-        if cuenta.cantidad_total > monto:
+        if cuenta.cantidad_total >= monto:
             cuenta.cantidad_total = cuenta.cantidad_total - monto
             cuenta.save()
 
